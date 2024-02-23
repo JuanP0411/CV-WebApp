@@ -1,0 +1,74 @@
+{% extends 'base.html' %} {% load static %}
+
+<!-- ================================
+Start SEO blocks
+================================= -->
+{% block title %}{% endblock %} {% block decription %}{% endblock %}
+<!-- ================================
+END SEO blocks
+================================= -->
+
+<!-- ================================
+Start CSS blocks
+================================= -->
+{% block extend_header %}{% endblock %}
+<!-- ================================
+END CSS blocks
+================================= -->
+
+<!-- ================================
+Start script blocks
+================================= -->
+{% block extend_footer %}{% endblock %}
+<!-- ================================
+END script blocks
+================================= -->
+
+<!-- ================================
+Start Content
+================================= -->
+{% block content %}
+<section>
+  <div class="innerPageBannerCol">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="bannerContent text-center">
+            <h1 class="xlTitle pb-md-3">{{object.name}}</h1>
+            <!-- Add an image here -->
+            <img
+              src="{{object.image.url}}"
+              alt="Banner Image"
+              class="img-fluid mx-auto d-block"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sectionSpaceSm d-flex justify-content-center align-items-center">
+    <div class="container text-center">
+      <!-- Add a description here -->
+      <p>{{object.description|safe}}</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sectionSpaceSm d-flex justify-content-center align-items-center">
+    <div class="container text-center">
+      <!-- Add a link to projects here -->
+      <a download href="{{object.link}}" class="btn btnPrimary"
+        >View Projects</a
+      >
+      <!-- Replace "/projects" with the actual URL of your projects page -->
+    </div>
+  </div>
+</section>
+<!-- ================================
+End Content
+================================= -->
+{%endblock%}
